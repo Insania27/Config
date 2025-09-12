@@ -3,18 +3,16 @@ import socket
 import shlex
 
 def handle_ls(args):
-    print("Command: ls")
-    print("Arguments:", args)
+    print("Command: ls ", args)
 
 def handle_cd(args):
-    print("Command: cd")
-    print("Arguments:", args)
+    print("Command: cd ", args)
 
 def handle_unknown_command(command):
     print("Unknown_command:", command)
 
 def get_prompt():
-    username = os.environ.get("USER", "user")
+    username = os.environ.get("USERNAME", "user")
     hostname = socket.gethostname()
     return f"{username}@{hostname}:~$ "
 
